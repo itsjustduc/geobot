@@ -27,22 +27,25 @@ def generate_challenge():
     challenge_options = {"map":map_id,"forbidMoving": not moving,"forbidRotating": not panning,"forbidZooming": not zooming,"timeLimit": time_limit}
     x = requests.post(api_url, json = challenge_options, cookies = cj)
     print(x.text)
-    return x.text
+    return x.json()
 
 #generate_challenge()
 
 def post_to_fedi(instance, status, token):
     response = requests.post(
-    url= instance + instance + "api/v1/statuses",
-    headers={
-        "Authorization": "Bearer " + token
-    },
-    json={"status": status_text, "visibility": "public", "spoiler_text": status_cw},
+    url= instance + "api/v1/statuses",
+    headers={"Authorization": "Bearer " + token},
+    json={"status": status, "visibility": "public", "spoiler_text": status_cw},
     )
+    if response.status_code != 200:
+        print(response.text)
     
 def run():
     challenge_id = generate_challenge()["token"]
     base_url = "https://www.geoguessr.com/challenge/"
     challenge_url = base_url + challenge_id
     status = status_text + " " + challenge_url
+    print(status)
+    post_to_fedi(instance, status, token)
     
+run()
