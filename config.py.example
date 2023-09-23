@@ -1,0 +1,17 @@
+cookies_file = "cookies-geoguessr-com.txt" # path of cookies file
+at_cmd = "tomorrow - 2 minutes" # at command schedule for summary (tomorrow - 1 minute)
+
+# fedi options
+instance = "https://quack.duc.gay/" # include trailing slash !!!!
+status_text = "New GeoGuessr daily challenge!" # text before URL in status
+status_cw = "GeoGuessr Daily Fedi Challenge" # text to use as cw for post
+
+# geo defaults
+moving = 1
+panning = 1
+zooming = 1
+time_limit = 180 # seconds
+map_url = "https://www.geoguessr.com/maps/62a44b22040f04bd36e8a914"
+
+# leave empty for git!!!!!
+token = ""
