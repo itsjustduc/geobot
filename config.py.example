@@ -5,6 +5,7 @@ at_cmd = "tomorrow - 2 minutes" # at command schedule for summary (tomorrow - 1 
 instance = "https://quack.duc.gay/" # include trailing slash !!!!
 status_text = "New GeoGuessr daily challenge!" # text before URL in status
 status_cw = "GeoGuessr Daily Fedi Challenge" # text to use as cw for post
+cw_add_date = True
 
 # geo defaults
 moving = 1

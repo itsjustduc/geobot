@@ -9,6 +9,7 @@ import argparse
 import subprocess
 import os
 from helpers import post_to_fedi
+from time import strftime
 
 parser = argparse.ArgumentParser(description='geo challenge generator')
 parser.add_argument('-m', '--moving', type=int, default=config.moving)
@@ -28,6 +29,9 @@ time_limit = args.time
 map_url = args.map
 status_text = args.status
 status_cw = args.cw
+if config.cw_add_date:
+    status_cw += " (" + strftime("%Y-%m-%d") + ")"
+    
 
 
 
